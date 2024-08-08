@@ -14,11 +14,11 @@
 .video-card {
   border: 1px solid #ccc;
   padding: 20px;
-  width: 200px; /* Largeur fixe */
-  height: 300px; /* Hauteur fixe */
+  width: 200px;
+  height: 300px;
   box-sizing: border-box;
-  border-radius: 10px; /* Bords arrondis */
-  position: relative; /* Ajoutez cette ligne pour positionner les éléments absolus */
+  border-radius: 10px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -106,14 +106,14 @@
 
 .like-bar {
   background-color: green;
-  border-top-left-radius: 10px; /* Bord arrondi en haut à gauche */
-  border-bottom-left-radius: 10px; /* Bord arrondi en bas à gauche */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .dislike-bar {
   background-color: red;
-  border-top-right-radius: 10px; /* Bord arrondi en haut à droite */
-  border-bottom-right-radius: 10px; /* Bord arrondi en bas à droite */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .toggle-button {

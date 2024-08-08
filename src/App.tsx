@@ -29,8 +29,8 @@ const videos = [
 
 function App() {
   const [videosList, setVideosList] = useState(videos);
-  const [categories, setCategories] = useState([]);
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(4);
 
@@ -49,15 +49,10 @@ function App() {
     setVideosList(filtered);
   }, [selectedCategories]);
 
-    // comportements
   const handleDelete = (id : number) => {
-    // 1. copie du state
     const videosCopy = [...videosList];
-    // 2. manipuler le state
     const videosCopyUpdated = videosCopy.filter((video) => video.id !== id);
-    // 3. mofication du state
     setVideosList(videosCopyUpdated);
-    // Update categories dynamically
     const allCategories = [...new Set(videosCopyUpdated.flatMap(video => video.categories))];
     setCategories(allCategories);
   };
@@ -104,15 +99,15 @@ function App() {
     setVideosList(updatedVideosCopy);
   };
 
-  const handleCategoryChange = (selected) => {
+  const handleCategoryChange = (selected: string[]) => {
     setSelectedCategories(selected);
   };
 
-  const handlePageChange = (page) => {
+  const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
 
-  const handleItemsPerPageChange = (items) => {
+  const handleItemsPerPageChange = (items: number) => {
     setItemsPerPage(items);
     setCurrentPage(1);
   };

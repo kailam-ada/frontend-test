@@ -1,4 +1,9 @@
-function LikeDislikeDisplay({ likes, dislikes, onToggleLike, onToggleDislike }) {
+type LikeDislikeDisplayProps = {
+  likes: number;
+  dislikes: number;
+}
+
+function LikeDislikeDisplay({ likes, dislikes }: LikeDislikeDisplayProps) {
   const totalVotes = likes + dislikes;
   const likePercentage = (likes / totalVotes) * 100 || 0;
   const dislikePercentage = (dislikes / totalVotes) * 100 || 0;

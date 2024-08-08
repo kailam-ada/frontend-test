@@ -1,6 +1,8 @@
-// import './DeleteBlock.css';
+type DeleteBlockProps = {
+  onDelete: () => void;
+}
 
-function DeleteBlock({ onDelete }) {
+function DeleteBlock({ onDelete } : DeleteBlockProps) {
   return (
     <div className="delete-block">
       <button onClick={onDelete} className="delete-button">X</button>

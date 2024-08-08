@@ -1,4 +1,18 @@
-function Pagination({ currentPage, totalItems, itemsPerPage, onPageChange, onItemsPerPageChange }) {
+type PaginationProps = {
+  currentPage: number;
+  totalItems: number;
+  itemsPerPage: number;
+  onPageChange: (page: number) => void;
+  onItemsPerPageChange: (items: number) => void;
+};
+
+function Pagination({
+  currentPage,
+  totalItems,
+  itemsPerPage,
+  onPageChange,
+  onItemsPerPageChange,
+}: PaginationProps) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const pageNumbers = [];
 
@@ -8,23 +22,33 @@ function Pagination({ currentPage, totalItems, itemsPerPage, onPageChange, onIte
 
   return (
     <div className="pagination">
-      <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
+      <button
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
         Previous
       </button>
-      {pageNumbers.map(number => (
+      {pageNumbers.map((number) => (
         <button
           key={number}
           onClick={() => onPageChange(number)}
-          className={currentPage === number ? 'active' : ''}
+          className={currentPage === number ? "active" : ""}
         >
           {number}
         </button>
       ))}
-      <button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+      <button
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+      >
         Next
       </button>
-      <select value={itemsPerPage} onChange={(e) => onItemsPerPageChange(Number(e.target.value))}>
-        {[4, 8, 12].map(size => (
+      <select
+        value={itemsPerPage}
+        onChange={(e) => onItemsPerPageChange(Number(e.target.value))}
+        title="Items per page"
+      >
+        {[4, 8, 12].map((size) => (
           <option key={size} value={size}>
             {size}
           </option>

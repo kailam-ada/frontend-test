@@ -1,5 +1,11 @@
-function Filter({ categories, selectedCategories, onCategoryChange }) {
-  const handleChange = (e) => {
+type FilterProps = {
+  categories: string[];
+  selectedCategories: string[];
+  onCategoryChange: (selectedCategories: string[]) => void;
+}
+
+function Filter({ categories, selectedCategories, onCategoryChange } : FilterProps) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
     let updatedCategories = [...selectedCategories];
     if (checked) {
