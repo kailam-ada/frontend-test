@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center; 
   padding: 20px;
+  color: rgb(82, 82, 82);
 }
 
 .video-list {
@@ -25,6 +26,7 @@
   transition: transform 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  background-color:rgb(250, 231, 186);
 }
 
 .button-group {
@@ -34,34 +36,48 @@
 }
 
 .button-group button {
+  display: flex;
   padding: 5px 10px;
-  border: 1px solid;
+  border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.button-group button svg {
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
 }
 
 .button-group button:first-child {
-  background-color: green;
+  background-color: rgb(32, 200, 32);
   color: white;
 }
 
 .button-group button:first-child:hover {
   background-color: rgb(0, 184, 0);
+  color: black;
 }
 
 .button-group button:last-child {
-  background-color: red;
+  background-color: rgb(246, 102, 157);
   color: white;
 }
 
 .button-group button:last-child:hover {
   background-color: rgb(255, 105, 105);
-  color: white;
+  color: black;
 }
 
-.button-group i {
-  margin-right: 5px;
+.liked {
+  stroke: rgb(82, 82, 82);
+}
+
+.disliked {
+  stroke: rgb(82, 82, 82);
 }
 
 .delete-block {
@@ -69,9 +85,9 @@
 }
 
 .delete-button {
-  background-color: red;
+  background-color: rgb(246, 102, 157);
   color: white;
-  border: 1px solid white;
+  border: 1px solid #ccc;
   width: 15px;
   height: 20px;
   display: flex;
@@ -82,15 +98,16 @@
 
 .delete-button:hover {
   background-color: rgb(255, 105, 105);
+  color: black;
 }
 
 .like-dislike-bar {
   display: flex;
   height: 20px;
   width: 100%;
-  background-color: #ccc;
   border-radius: 10px;
   overflow: hidden;
+  border: 1px solid #ccc;
 }
 
 .like-bar,
@@ -102,16 +119,18 @@
   font-size: 12px;
   position: relative;
   transition: width 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
 .like-bar {
-  background-color: green;
+  background-color: rgb(32, 200, 32);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
 .dislike-bar {
-  background-color: red;
+  background-color: rgb(246, 102, 157);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -128,10 +147,7 @@
   padding: 2px 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-.toggle-button i {
-  margin-right: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .filter {
@@ -142,6 +158,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: rgb(106, 106, 106);
+  background-color: rgb(225, 246, 239);
 }
 
 .filter label {
@@ -153,19 +172,22 @@
 }
 
 .filter label:hover {
-  color: #007bff;
+  color: black;
 }
 
 .filter input[type="checkbox"] {
   margin-right: 3px;
 }
 
-pagination {
+.pagination {
   display: flex;
   justify-content: center;
 }
 
 .pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0 5px;
   padding: 5px 10px;
   border: 1px solid;
@@ -173,6 +195,7 @@ pagination {
   cursor: pointer;
   background-color: #ccc;
   transition: background-color 0.3s;
+  color: rgb(82, 82, 82);
 }
 
 .pagination button:hover {
@@ -180,12 +203,21 @@ pagination {
 }
 
 .pagination button.active {
-  background-color: #007bff;
+  background-color: #f0aaf7;
   color: white;
+}
+
+.pagination button.disabled {
+  opacity: .6;
 }
 
 .pagination select {
   margin-left: 20px;
   padding: 5px;
   border-radius: 5px;
+}
+
+.pagination button svg {
+  width: 17px;
+  height: 17px;
 }
